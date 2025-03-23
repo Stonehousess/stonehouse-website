@@ -22,8 +22,10 @@
         }
 
         .notice-board {
-            width: 80%; /* Adjust width to scale better on smaller screens */
-            max-width: 1000px; /* Adjusted max width */
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%); /* Fix horizontal alignment */
+            width: 1000px; /* Fixed width */
             background-color: rgba(245, 245, 220, 0.95); /* Beige color with 95% opacity */
             padding: 20px;
             border-radius: 12px;
