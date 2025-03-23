@@ -60,7 +60,7 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            z-index: 999;
+            z-index: 998;
         }
 
         .argyle-widget {
@@ -71,9 +71,9 @@
             text-align: center;
             font-size: 1.2rem;
             position: fixed;
-            bottom: 80px; /* Lifted above the weather widget */
+            bottom: 0; /* On top of the weather widget */
             left: 0;
-            z-index: 999;
+            z-index: 999; /* Higher z-index to place it on top */
             border-top: 2px solid #ffffff;
             font-weight: bold;
         }
