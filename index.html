@@ -17,21 +17,20 @@
             display: flex;
             justify-content: center;
             align-items: center; /* Center vertically */
-            padding-top: 305px; /* Raised by 5px */
             text-align: center; /* Center all text */
         }
 
         .notice-board {
-            width: 80%;
-            max-width: 1000px; /* Wider by 100px on each side */
+            width: 70%;
+            max-width: 900px;
             background-color: rgba(245, 245, 220, 0.95); /* Beige color with 95% opacity */
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
             overflow-y: auto;
-            height: auto;
-            max-height: calc(100vh - 350px - 90px); /* Ensure weather widget fits */
+            height: 60vh; /* Scale with window height without touching bottom */
+            max-height: 70vh;
         }
 
         h1 {
