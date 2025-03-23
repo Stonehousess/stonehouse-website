@@ -17,14 +17,14 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding-top: 300px; /* Start panel vertically 300px lower */
+            padding-top: 290px; /* Raised by 10px */
             text-align: center; /* Center all text */
         }
 
         .notice-board {
             width: 80%;
             max-width: 1000px; /* Wider by 100px on each side */
-            background-color: rgba(244, 164, 96, 0.9); /* Sandy color with 90% opacity */
+            background-color: rgba(245, 245, 220, 0.95); /* Beige color with 95% opacity */
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -49,21 +49,15 @@
             text-align: center;
         }
 
+        .widget h2, .widget p {
+            font-family: Tahoma, sans-serif; /* Change to Tahoma font */
+        }
+
         iframe {
             width: 100%;
             height: 300px;
             border: none;
             overflow: hidden;
-        }
-
-        .weather-widget {
-            width: 100%;
-            opacity: 0.96; /* 96% opacity */
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            z-index: 999;
-            height: 90px; /* Increased height to make it fully visible */
         }
     </style>
 </head>
@@ -81,30 +75,9 @@
         </div>
 
         <div class="widget">
-            <h2>Weather</h2>
-            <p>Loading weather...</p>
-        </div>
-
-        <div class="widget">
             <h2>Tide Times</h2>
             <iframe src="https://www.tide-forecast.com/locations/Plymouth/tides/latest" width="100%" height="300"></iframe>
         </div>
-    </div>
-
-    <!-- Weather widget at the bottom -->
-    <div class="weather-widget">
-        <a class="weatherwidget-io" href="https://forecast7.com/en/50d38n4d14/plymouth/" data-label_1="PLYMOUTH" data-label_2="STONEHOUSE" data-theme="orange">PLYMOUTH STONEHOUSE</a>
-        <script>
-            !function(d,s,id){
-                var js,fjs=d.getElementsByTagName(s)[0];
-                if(!d.getElementById(id)){
-                    js=d.createElement(s);
-                    js.id=id;
-                    js.src='https://weatherwidget.io/js/widget.min.js';
-                    fjs.parentNode.insertBefore(js,fjs);
-                }
-            }(document,'script','weatherwidget-io-js');
-        </script>
     </div>
 
     <script>
