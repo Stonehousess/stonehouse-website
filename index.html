@@ -16,7 +16,8 @@
             overflow: hidden;
             display: flex;
             justify-content: center;
-            align-items: center; /* Scale around center */
+            align-items: flex-start;
+            padding-top: 200px; /* Start panel vertically 200px lower */
             text-align: center; /* Center all text */
         }
 
@@ -30,6 +31,7 @@
             text-align: center;
             overflow-y: auto;
             height: auto;
+            max-height: calc(100vh - 200px - 90px); /* Stop before the weather widget */
         }
 
         h1 {
