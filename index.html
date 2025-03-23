@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stonehouse Residents' Association</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background: url('SThp.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .notice-board {
+            width: 80%;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            overflow-y: auto;
+            height: 60%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .widget {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="notice-board">
+        <h1>Welcome to Stonehouse Residents' Association</h1>
+        <div class="widget">
+            <h2>Latest News</h2>
+            <p>Stay tuned for the latest updates and events happening in Stonehouse!</p>
+        </div>
+
+        <div class="widget">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>Community Meeting - April 15th, 7:00 PM</li>
+                <li>Charity Bake Sale - April 20th, 10:00 AM</li>
+            </ul>
+        </div>
+
+        <div class="widget">
+            <h2>Weather</h2>
+            <p>Loading weather...</p>
+        </div>
+    </div>
+
+    <script>
+        // Sample weather fetching (replace with real API if needed)
+        async function getWeather() {
+            const weatherElement = document.querySelector('.widget:nth-child(3) p');
+            weatherElement.textContent = 'Loading weather...';
+
+            try {
+                const response = await fetch('https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q=Plymouth');
+                const data = await response.json();
+                weatherElement.textContent = `${data.location.name}: ${data.current.temp_c}°C, ${data.current.condition.text}`;
+            } catch (error) {
+                weatherElement.textContent = 'Unable to load weather data';
+            }
+        }
+
+        getWeather();
+    </script>
+</body>
+</html>
